@@ -1,13 +1,7 @@
 #include <cstdio>
 #include <iostream>
 
-int fibo(int n) {
-  if (n == 1 || n == 0) {
-    return n;
-  }
-
-  return fibo(n - 1) + fibo(n - 2);
-}
+int fibo(int n);
 
 int main() {
   int n_user;
@@ -15,6 +9,15 @@ int main() {
   std::cin >> n_user;
 
   int res = fibo(n_user);
-  std::cout << "El numero en la posicion " << n_user << " es: " << res << std::endl;
+  std::cout << "El numero en la posicion " << n_user << " es: " << res
+            << std::endl;
   return 0;
+}
+
+int fibo(int n) {
+  if (n == 1 || n == 0) {
+    return n;
+  }
+
+  return fibo(n - 1) + fibo(n - 2);
 }

@@ -1,11 +1,12 @@
 #include <iostream>
+#include <utility>
 
 int *addElement(int *arr, int val, int pos, int len, int index);
 
 int main(int argc, char *argv[]) {
-  int len;
-  int pos;
-  int val;
+  int len = 5;
+  int pos = 2;
+  int val = 99;
   std::cout << "Ingrese el tamaño del arreglo deseado: ";
   std::cin >> len;
 
@@ -20,24 +21,19 @@ int main(int argc, char *argv[]) {
 
   arr = addElement(arr, val, pos, len, 0);
 
-  for (int i = 0; i < len; i++) {
+  for (int i = 0; i <= len; i++) {
     std::cout << arr[i] << ", ";
   }
   return 0;
 }
 
 int *addElement(int *arr, int val, int pos, int len, int index) {
-  if (index == len) {
+  if (index > len) {
     return arr;
   }
 
   if (index >= pos) {
-    arr[index] = arr[index - 1];
-  }
-
-  if (index == pos) {
-
-    arr[index] = val;
+    std::swap(val, arr[index]);
   }
   return addElement(arr, val, pos, len, index + 1);
 }

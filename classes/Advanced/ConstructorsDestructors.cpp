@@ -32,11 +32,13 @@ int main() {
 
 /*
 Explanation:
-- **Constructors:** The `Logger` class has a constructor that initializes the
-`name` attribute and prints a creation message.
-- **Destructors:** The destructor prints a destruction message when the object
-goes out of scope.
-- **Scope-Based Lifetime:** In `main`, the `Logger` object `appLogger` is
-created within a block. When the block is exited, the destructor is
-automatically called, demonstrating resource management.
+  - Constructors: The `Logger` class has a constructor that initializes the
+    `name` attribute and prints a creation message.
+
+  - Destructors: The destructor prints a destruction message when the object
+    goes out of scope.
+
+  - Scope-Based Lifetime: In `main`, the `Logger` object `appLogger` is
+    created within a block. When the block is exited, the destructor is
+    automatically called, demonstrating resource management.
 */
